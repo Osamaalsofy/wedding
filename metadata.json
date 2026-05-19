@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Velora Wedding Atelier",
+  "description": "A cinematic, luxury wedding planning experience blending timeless elegance with modern artistry and refined storytelling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

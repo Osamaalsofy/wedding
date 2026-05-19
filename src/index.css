@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-serif: "Source Serif 4", serif;
+  --color-brand-red: #802525;
+  --color-brand-brown: #533100;
+  --color-brand-black: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fafaf9;
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+#root {
+  background: transparent;
+}
+
+main {
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.6em;
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--color-brand-red);
+  margin-bottom: 2.5rem;
+  padding: 0 12px;
+  border-left: 1px solid rgba(128, 37, 37, 0.2);
+  border-right: 1px solid rgba(128, 37, 37, 0.2);
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--color-brand-red);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.section-label span {
+  display: inline-block;
+  position: relative;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 em,
+h2 em,
+h3 em,
+h1 i,
+h2 i,
+h3 i,
+h1 .italic,
+h2 .italic,
+h3 .italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  padding-right: 0.1em; /* Fix for italic font clipping */
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ===============================
+   LIQUID GLASS (Light Theme)
+================================= */
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.05) 20%,
+    rgba(0,0,0,0) 40%,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.05) 80%,
+    rgba(0,0,0,0.15) 100%
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===============================
+   CINEMATIC HELPERS (Light Theme)
+================================= */
+
+.hero-overlay {
+  display: none;
+}
+
+.soft-grid {
+  display: none;
+}
+
+.readable-headline {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.readable-body {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #111111 40%,
+    #2a2a2a 70%,
+    #444444 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.15em;
+  margin-right: -0.15em;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+}
+
+.modern-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 
+    0 4px 20px -2px rgba(0,0,0,0.03),
+    0 10px 40px -4px rgba(0,0,0,0.02);
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 30px -4px rgba(0,0,0,0.06),
+    0 20px 60px -10px rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.1);
+}
+
+.glow {
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.04),
+    0 0 80px rgba(0,0,0,0.02);
+}
+
+/* Elegant scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fafaf9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.2);
+}
+
