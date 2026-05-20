@@ -270,7 +270,6 @@ export default function App() {
                       </div>
                       <div className="flex justify-between items-center px-1 font-mono text-[9px] tracking-widest text-black/40">
                         <span>PORTAL / VELORA INTERIOR</span>
-                        <span>DOOR 01</span>
                       </div>
                     </div>
 
