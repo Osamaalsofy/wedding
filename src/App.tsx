@@ -17,18 +17,39 @@ import {
 const services = [
   {
     title: "Luxury Wedding Design",
+    details: ["Spatial Curation", "Bespoke Color Theory"],
     description:
       "Curated cinematic wedding experiences crafted with timeless elegance and modern refinement.",
   },
   {
     title: "Destination Planning",
+    details: ["Global Concierge", "Venue Buyouts"],
     description:
       "Exclusive destination weddings orchestrated with precision across breathtaking global venues.",
   },
   {
     title: "Creative Direction",
+    details: ["3D Spatial Modeling", "Atmospheric Plots"],
     description:
       "From moodboards to CGI-inspired aesthetics, every visual detail is intentionally designed.",
+  },
+  {
+    title: "Floral & Botanical Art",
+    details: ["Sculptural Florals", "Sensory Scentscapes"],
+    description:
+      "Living botanical masterpieces of scale and fragrance designed to complement historic spaces.",
+  },
+  {
+    title: "Technical Production",
+    details: ["Ambiance Lighting", "Immersive Acoustics"],
+    description:
+      "Cinematic lighting architectures and flawless acoustics that direct the day's energy dynamically.",
+  },
+  {
+    title: "Culinary Orchestration",
+    details: ["Michelin Gastronomy", "Artisanal Sommeliers"],
+    description:
+      "Partnering with world-renowned chefs to design high-concept banquets and custom-paired dining.",
   },
 ];
 
@@ -218,19 +239,41 @@ export default function App() {
 
           <section id="services" className="w-full bg-[#fdfdfc] py-32 md:py-48">
             <div className="max-w-7xl px-5 md:px-8 mx-auto">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                  <div className="lg:col-span-12 flex flex-col items-center">
-                    <p className="text-[10px] uppercase tracking-[0.5em] text-brand-red font-bold mb-8">What we do</p>
-                    <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter leading-[0.9] mb-10 text-center text-brand-black">
-                      Bespoke
-                      <br />
-                      Planning &
-                      <br />
-                      <em className="italic font-normal lowercase font-serif text-brand-red">design</em>
-                    </h2>
-                    <p className="text-lg text-brand-brown leading-relaxed font-serif italic mb-12 text-center max-w-2xl">
-                      Our atelier offers a comprehensive suite of services designed to elevate your wedding into a cinematic masterpiece. From global logistics to creative direction, we handle every nuance.
-                    </p>
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                  {/* Left Column - Sticky & Editorial with DOOR0.png Gate */}
+                  <div className="lg:col-span-5 flex flex-col items-start lg:sticky lg:top-32 gap-8 self-start">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.5em] text-brand-red font-bold mb-4">What we do</p>
+                      <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-[0.9] mb-6 text-brand-black">
+                        Bespoke
+                        <br />
+                        Planning &
+                        <br />
+                        <em className="italic font-normal lowercase font-serif text-brand-red">design</em>
+                      </h2>
+                      <p className="text-base text-brand-brown leading-relaxed font-serif italic mb-8 max-w-md">
+                        Our atelier offers a comprehensive suite of services designed to elevate your wedding into a cinematic masterpiece. From global logistics to creative direction, we handle every nuance.
+                      </p>
+                    </div>
+
+                    {/* Cinematic Img Frame (DOOR0.png) */}
+                    <div className="w-full flex flex-col gap-3 group/door">
+                      <div className="w-full aspect-[4/5] overflow-hidden rounded-t-full border border-black/5 shadow-xl bg-neutral-100 relative">
+                        <img 
+                          src="https://raw.githubusercontent.com/Osamaalsofy/wedding/main/src/assets/images/DOOR0.png"
+                          alt="Atelier Entrance Door"
+                          className="w-full h-full object-cover transition-transform duration-1000 group-hover/door:scale-105"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-black/5 transition-opacity duration-500 group-hover/door:opacity-0" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-80" />
+                      </div>
+                      <div className="flex justify-between items-center px-1 font-mono text-[9px] tracking-widest text-black/40">
+                        <span>PORTAL / VELORA INTERIOR</span>
+                        <span>DOOR 01</span>
+                      </div>
+                    </div>
+
                     <motion.button 
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -242,17 +285,31 @@ export default function App() {
                     </motion.button>
                   </div>
 
-                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                  {/* Right Column - Deep Content Cards Grid (6 Services) */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:mt-6">
                      {services.map((service, index) => (
                        <motion.div 
                         key={service.title}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: index * 0.1 }}
-                        className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-sm hover:shadow-xl transition-all group"
+                        className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-sm hover:shadow-xl hover:border-black/10 transition-all group flex flex-col justify-between"
                        >
-                         <h3 className="text-xl font-bold uppercase tracking-tight mb-4 group-hover:text-black/60 transition-colors">{service.title}</h3>
-                         <p className="text-sm text-black/40 leading-relaxed italic">{service.description}</p>
+                         <div>
+                           <div className="font-mono text-xs text-brand-red opacity-60 mb-4 tracking-widest">
+                             {String(index + 1).padStart(2, '0')}
+                           </div>
+                           <h3 className="text-xl font-bold uppercase tracking-tight mb-3 group-hover:text-brand-red transition-colors">{service.title}</h3>
+                           <p className="text-xs text-black/50 leading-relaxed italic">{service.description}</p>
+                         </div>
+                         <div className="flex flex-wrap gap-1.5 mt-6 pt-6 border-t border-black/5">
+                           {service.details.map((detail) => (
+                             <span key={detail} className="text-[9px] font-mono uppercase tracking-wider px-2.5 py-1 bg-black/[0.03] text-black/40 rounded-full">
+                               {detail}
+                             </span>
+                           ))}
+                         </div>
                        </motion.div>
                      ))}
                   </div>
