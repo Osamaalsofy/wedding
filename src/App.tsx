@@ -137,7 +137,7 @@ export default function App() {
                   initial={{ scale: 1.2 }}
                   animate={{ scale: 1.1 }}
                   transition={{ duration: 2, ease: "easeOut" }}
-                  src="https://raw.githubusercontent.com/Osamaalsofy/Wedding-Planner-/c0ff6adfa65bf4f64fa6d0045dc34d64fe905844/BG.png" 
+                  src="https://raw.githubusercontent.com/Osamaalsofy/wedding/main/src/assets/images/BG.png" 
                   alt="Atelier Background"
                   className="w-full h-full object-cover object-center"
                 />
@@ -209,7 +209,7 @@ export default function App() {
           {/* Full Width Image Break */}
           <div className="w-full h-[60vh] md:h-[80vh] overflow-hidden">
              <img 
-               src="https://raw.githubusercontent.com/Osamaalsofy/Wedding-Planner-/1c82fd8231b76a5ee1fe7f7517b59ed88c9dbeb2/Wedding.jpg" 
+               src="https://raw.githubusercontent.com/Osamaalsofy/wedding/main/src/assets/images/Wedding.jpg" 
                alt="Aesthetic Detail"
                className="w-full h-full object-cover"
                referrerPolicy="no-referrer"
